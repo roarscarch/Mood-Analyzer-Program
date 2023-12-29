@@ -11,9 +11,14 @@ public class MoodAnalyzer {
     }
 
     public String analyzeMood() {
-        if (this.message.contains("Sad")) {
-            return "SAD";
-        } else {
+        try {
+
+            if (this.message == null || this.message.isEmpty()) {
+                throw new NullPointerException("Invalid Mood: Message is null or empty");
+            }
+
+            return this.message.contains("Sad") ? "SAD" : "HAPPY";
+        } catch (NullPointerException exception) {
             return "HAPPY";
         }
     }

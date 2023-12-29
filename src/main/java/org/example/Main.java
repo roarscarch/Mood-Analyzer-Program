@@ -10,6 +10,8 @@ public class Main {
         MoodAnalyzer analyzer3 = new MoodAnalyzer("Feeling positive and energetic!");
         MoodAnalyzer analyzer4 = new MoodAnalyzer("I can't decide how I feel right now.");
         MoodAnalyzer analyzer5 = new MoodAnalyzer("Feeling relaxed and content.");
+        MoodAnalyzer analyzer6 = new MoodAnalyzer(null);
+
 
         // checking moods
         System.out.println("Mood is " + analyzer1.analyzeMood());
@@ -17,5 +19,6 @@ public class Main {
         System.out.println("Mood is " + analyzer3.analyzeMood());
         System.out.println("Mood is " + analyzer4.analyzeMood());
         System.out.println("Mood is " + analyzer5.analyzeMood());
+        System.out.println("Mood is " + analyzer6.analyzeMood());
     }
 }
