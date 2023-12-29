@@ -1,24 +1,38 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CustomMoodException {
         System.out.println("Welcome to mood analyzer.");
 
         // Creating mood analyzer objects
         MoodAnalyzer analyzer1 = new MoodAnalyzer("I am in Sad Mood");
         MoodAnalyzer analyzer2 = new MoodAnalyzer("I am in Any Mood");
-        MoodAnalyzer analyzer3 = new MoodAnalyzer("Feeling positive and energetic!");
-        MoodAnalyzer analyzer4 = new MoodAnalyzer("I can't decide how I feel right now.");
-        MoodAnalyzer analyzer5 = new MoodAnalyzer("Feeling relaxed and content.");
-        MoodAnalyzer analyzer6 = new MoodAnalyzer(null);
-
+        MoodAnalyzer analyzer3 = new MoodAnalyzer(null);
+        MoodAnalyzer analyzer4 = new MoodAnalyzer("");
 
         // checking moods
-        System.out.println("Mood is " + analyzer1.analyzeMood());
-        System.out.println("Mood is " + analyzer2.analyzeMood());
-        System.out.println("Mood is " + analyzer3.analyzeMood());
-        System.out.println("Mood is " + analyzer4.analyzeMood());
-        System.out.println("Mood is " + analyzer5.analyzeMood());
-        System.out.println("Mood is " + analyzer6.analyzeMood());
+        try {
+            System.out.println("Mood is " + analyzer1.analyzeMood());
+        } catch (CustomMoodException exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        try {
+            System.out.println("Mood is " + analyzer2.analyzeMood());
+        } catch (CustomMoodException exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        try {
+            System.out.println("Mood is " + analyzer3.analyzeMood());
+        } catch (CustomMoodException exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        try {
+            System.out.println("Mood is " + analyzer4.analyzeMood());
+        } catch (CustomMoodException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 }

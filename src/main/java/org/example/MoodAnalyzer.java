@@ -1,5 +1,7 @@
 package org.example;
 
+
+
 public class MoodAnalyzer {
     private String message;
 
@@ -10,16 +12,18 @@ public class MoodAnalyzer {
         this.message = message;
     }
 
-    public String analyzeMood() {
-        try {
+    public String analyzeMood() throws CustomMoodException {
+        // UC2: handle null or empty message
+        validateMessage();
 
-            if (this.message == null || this.message.isEmpty()) {
-                throw new NullPointerException("Invalid Mood: Message is null or empty");
-            }
+        return this.message.contains("Sad") ? "SAD" : "HAPPY";
+    }
 
-            return this.message.contains("Sad") ? "SAD" : "HAPPY";
-        } catch (NullPointerException exception) {
-            return "HAPPY";
+    private void validateMessage() throws CustomMoodException {
+        if (this.message == null) {
+            throw new CustomMoodException(MoodErrorType.NULL, "Invalid input: message is null");
+        } else if (this.message.isEmpty()) {
+            throw new CustomMoodException(MoodErrorType.EMPTY, "Invalid input: message is empty");
         }
     }
 }
