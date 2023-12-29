@@ -4,26 +4,18 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to mood analyzer.");
 
-        MoodAnalyzer analyzer = new MoodAnalyzer();
+        // Creating mood analyzer objects
+        MoodAnalyzer analyzer1 = new MoodAnalyzer("I am in Sad Mood");
+        MoodAnalyzer analyzer2 = new MoodAnalyzer("I am in Any Mood");
+        MoodAnalyzer analyzer3 = new MoodAnalyzer("Feeling positive and energetic!");
+        MoodAnalyzer analyzer4 = new MoodAnalyzer("I can't decide how I feel right now.");
+        MoodAnalyzer analyzer5 = new MoodAnalyzer("Feeling relaxed and content.");
 
-        System.out.println("Mood is " + analyzer.analyzeMood("I am feeling happy today!"));
-
-
-        System.out.println("Mood is " + analyzer.analyzeMood("Life is tough, feeling down."));
-
-
-        System.out.println("Mood is " + analyzer.analyzeMood("Just another day, nothing special."));
-
-
-        System.out.println("Mood is " + analyzer.analyzeMood(""));
-
-
-        System.out.println("Mood is " + analyzer.analyzeMood("Excited and nervous about the upcoming event Sad."));
-
-
-        System.out.println("Mood is " + analyzer.analyzeMood("I AM CONFUSED."));
-
-
-        System.out.println("Mood is " + analyzer.analyzeMood("   Indifferent   "));
+        // checking moods
+        System.out.println("Mood is " + analyzer1.analyzeMood());
+        System.out.println("Mood is " + analyzer2.analyzeMood());
+        System.out.println("Mood is " + analyzer3.analyzeMood());
+        System.out.println("Mood is " + analyzer4.analyzeMood());
+        System.out.println("Mood is " + analyzer5.analyzeMood());
     }
 }
